@@ -1,5 +1,7 @@
-source("loaddata.R")
 #learn4ever, 6 June 2014
+
+source("loaddata.R")
+
 doPlot4 <- function() {
     tbl <- prepareData()
     
@@ -27,12 +29,16 @@ doPlot4 <- function() {
          xlab="", 
          ylab="Energy Sub Metering", 
          col="Black")
+    
     lines(tbl$DateTime, tbl$Sub_metering_2, 
           type="l", 
           col="Red")
+    
     lines(tbl$DateTime, tbl$Sub_metering_3, 
           type="l", 
           col="Blue")
+    
+    # for the legend, bty=n turns off the box
     legend("topright", 
            bty="n", 
            lty=1, 
